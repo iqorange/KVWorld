@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -252,7 +252,7 @@
 				};
 			};
 			buildConfigurationList = 0220CE0F24CB1D2100718A1E /* Build configuration list for PBXProject "KVApp" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -488,7 +488,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "KVApp/KVApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = /Users/filmorange/Documents/RC/KVWorld/KVAudio/KVApp/KVApp/include;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /Users/flimorange/Documents/GitHub/KVWorld/KVAudio/KVApp/KVApp/include;
 			};
 			name = Debug;
 		};
@@ -515,7 +515,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVApp/KVApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = /Users/filmorange/Documents/RC/KVWorld/KVAudio/KVApp/KVApp/include;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /Users/flimorange/Documents/GitHub/KVWorld/KVAudio/KVApp/KVApp/include;
 			};
 			name = Release;
 		};

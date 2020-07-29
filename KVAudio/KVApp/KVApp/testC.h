@@ -10,7 +10,12 @@
 #define testC_h
 
 #include <stdio.h>
+// 加载ffmpeg源码
 #include "libavutil/avutil.h"
+// 注册设备
+#include "libavdevice/avdevice.h"
+// 格式化解析
+#include "libavformat/avformat.h"
 
 void test(void);
 
