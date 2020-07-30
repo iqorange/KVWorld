@@ -16,6 +16,8 @@
 #include "libavdevice/avdevice.h"
 // 格式化解析
 #include "libavformat/avformat.h"
+// 设备中读取音频包
+#include "libavcodec/avcodec.h"
 
 void test(void);
 
