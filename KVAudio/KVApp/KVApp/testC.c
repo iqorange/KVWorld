@@ -7,21 +7,43 @@
 //
 
 #include "testC.h"
-void test(){
-    printf("This is a C function\n");
+void record_audio(){
+//    printf("This is a C function\n");
     
+    // ***** 对象构建 *****
+    /**
+     Context
+     */
     // 音视频设备上下文
     AVFormatContext *fmt_ctx;
+    // 设备参数，暂时为空
+    AVDictionary *options = NULL;
+    
     // 打开音视频设备的方式
     // [[video device]:[audio device]]
     char *devicename = ":0";
-    // 设备参数，暂时为空
-    AVDictionary *options = NULL;
+    
+    // set log level
+    av_log_set_level(AV_LOG_DEBUG);
+        
+    /**
+     packet
+     */
+    // 循环计数器
+    int count = 0;
+    // 栈空间中注册数据包
+    AVPacket pkt;
+    
     // 状态值 成功=0 不成功<0
     int ret = 0;
     // 错误信息容器
-    char errors[1024];
+    char errors[1024] = {0, };
     
+    // ********************
+    
+    /**
+     Open device
+     */
     // 注册所有设备
     avdevice_register_all();
     // 获得格式解析
@@ -34,20 +56,24 @@ void test(){
         return;
     }
     
-    // 循环计数器
-    int count = 0;
-    // 栈空间中注册数据包
-    AVPacket pkt;
     // 初始化数据包
     av_init_packet(&pkt);
+    
+    /**
+     Read data from device
+     */
     // 循环读取音频包
     while ((ret = av_read_frame(fmt_ctx, &pkt) && count++ < 600) == 0) {
+        av_log(NULL, AV_LOG_INFO, "Packet size is %d(%p), count = %d \n", pkt.size, pkt.data, count);
         printf("pkt size is %d \n", pkt.size);
+        // 释放数据包
+        av_packet_unref(&pkt);
     }
     // 反初始化
     av_packet_unref(&pkt);
+    // 释放上下文 Close device and release context
+    avformat_close_input(&fmt_ctx);
     
-    av_log_set_level(AV_LOG_DEBUG);
-    av_log(NULL, AV_LOG_DEBUG, "Hello AVUtil~\n");
+    av_log(NULL, AV_LOG_DEBUG, "Finish AVUtil~\n");
     return;
 }

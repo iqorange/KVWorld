@@ -37,7 +37,7 @@ class ViewController: NSViewController {
     func myfunc(){
         print("Hello KVAudio~")
         // 调用C函数
-        test()
+        record_audio()
     }
 
     override var representedObject: Any? {
