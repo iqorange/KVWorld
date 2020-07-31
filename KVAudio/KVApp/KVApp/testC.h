@@ -19,6 +19,7 @@
 // 设备中读取音频包
 #include "libavcodec/avcodec.h"
 
+void set_status(int status);
 void record_audio(void);
 
 #endif /* testC_h */
