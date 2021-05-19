@@ -1,0 +1,46 @@
+<html lang="zh-Hans">
+	<head>
+		<title>聊天室入口</title>
+        <meta charset="utf-8">
+		<link rel="stylesheet" href="./main.css"></link>
+	</head>
+	<body>
+		<table align="center">
+			<tr>
+				<td>
+					<label>UserName: </label>
+					<input type=text id="username"></input>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>room: </label>
+					<input type=text id="room"></input>
+					<button id="connect">Conect</button>
+					<button id="leave" disabled>Leave</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Content: </label><br>
+					<textarea disabled style="line-height: 1.5;" id="output" rows="10" cols="100"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Input: </label><br>
+					<textarea disabled id="input" rows="3" cols="100"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="send">Send</button>
+				</td>
+			</tr>
+		</table>
+
+		<script src="./socket.io.js"></script>
+		<script src="./client.js"></script>
+	</body>
+
+</html>
